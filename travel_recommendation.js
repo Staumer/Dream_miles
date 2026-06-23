@@ -1,32 +1,22 @@
-  function searchCondition() {
-    const input = document.getElementById('conditionInput').value.toLowerCase();
-    const resultDiv = document.getElementById('result');
-    resultDiv.innerHTML = '';
+// Set current year in footer
+document.getElementById("year").textContent = new Date().getFullYear();
 
-    fetch('travel_recommendation_api.json')
-      .then(response => response.json())
-      .then(data => {
-        const condition = data.conditions.find(item => item.name.toLowerCase() === input);
+// Example: Show an alert when the recommendation button is clicked
+const button = document.querySelector("button");
 
-        if (condition) {
-          const symptoms = condition.symptoms.join(', ');
-          const prevention = condition.prevention.join(', ');
-          const treatment = condition.treatment;
+if (button) {
+  button.addEventListener("click", () => {
+    alert("Your Dream Miles recommendations are being imagined!");
+  });
+}
 
-          resultDiv.innerHTML += `<h2>${condition.name}</h2>`;
-          resultDiv.innerHTML += `<img src="${condition.imagesrc}" alt="hjh">`;
-
-          resultDiv.innerHTML += `<p><strong>Symptoms:</strong> ${symptoms}</p>`;
-          resultDiv.innerHTML += `<p><strong>Prevention:</strong> ${prevention}</p>`;
-          resultDiv.innerHTML += `<p><strong>Treatment:</strong> ${treatment}</p>`;
-        } else {
-          resultDiv.innerHTML = 'Condition not found.';
-        }
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        resultDiv.innerHTML = 'An error occurred while fetching data.';
-      });
-  }
-    btnSearch.addEventListener('click', searchCondition);
+// Example: Smooth scroll for internal links (if you add a nav later)
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+});
 
