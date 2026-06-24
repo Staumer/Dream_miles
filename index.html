@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Travel Recommendation</title>
+  <link rel="stylesheet" href="./travel_recommendation.css">
+</head>
+<body>
+   <nav><h1>Dream Miles</h1>
+<ul>
+  <li><a href="./travel_recommendation.html" id="home">Home </a></li>
+  <li><a href="./travel_about.html" id="about">About</a></li>
+  <li><a href="./travel_contact.html" id="contact">Contact Us </a></li>
+  <li><input type="text" id="countriesInput" placeholder="Search our Recommendations">  </li>
+  <li><button id='btnSearch'>Search</button></li>
+  <li><button id='resetBtn' class="reset-button">Reset</button></li>
+</ul>
+</nav>
+ <main>
+    <h1>Explore your horizons</h1>
+    <p>
+      Your personalized gateway to unforgettable journeys—discover destinations, travel styles,
+      and trip ideas tailored to the way you love to explore.  We have handpicked places around the world from our recommendations.
+      Search our recommended destinations to get a feel of moods and travle dreams.  Feel free to contact us for even more recommend travel destinations
+      based on your budget.
+    </p>
+      <br>
+   <br>
+    <!-- Travel Styles -->
+    <section>
+      <h2>Travel Styles</h2>
+      <p class="tagline">
+        Choose the way you like to travel, and Dream Miles can suggest destinations that fit.
+      </p>
+      <ul class="styles-list">
+        <li><span class="highlight">Adventure Escapes:</span> Mountains, jungles, and thrilling outdoor activities.</li>
+        <li><span class="highlight">Relaxing Retreats:</span> Beaches, spas, and peaceful hideaways.</li>
+        <li><span class="highlight">Cultural Journeys:</span> Museums, historic sites, and local traditions.</li>
+        <li><span class="highlight">Urban Explorations:</span> Skyscrapers, nightlife, and modern city energy.</li>
+      </ul>
+    </section>
+   <div id="result"></div>  
+  </main>
 
+  <footer>
+    © <span id="year"></span> Dream Miles · Explore, dream, and discover your next journey.
+  </footer>
+<script src="./travel_recommendation.js"></script>
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
